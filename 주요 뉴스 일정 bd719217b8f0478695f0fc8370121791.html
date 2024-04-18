@@ -1,0 +1,747 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>주요 뉴스/일정</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bd719217-b8f0-4786-95f0-fc8370121791" class="page sans"><header><h1 class="page-title">주요 뉴스/일정</h1><p class="page-description"></p></header><div class="page-body"><p id="e5db675e-1300-4420-8d5e-0878cd384439" class="">
+</p><h3 id="c1066ade-027b-4efd-be12-fe61b42a6109" class=""><strong>1. 경제 뉴스 헤드라인</strong></h3><p id="6974ca5d-d50d-4bfc-af3c-b5987693c8cb" class="">
+</p><blockquote id="d1f5d1d5-50e0-4866-816d-de59ecf5772c" class=""><strong>엔비디아 3.9% 급락…ASML 부진에 반도체 회복 우려</strong></blockquote><p id="d10a4fd6-787e-4e3c-905d-0e11eb4805ca" class="">어제 네덜란드 반도체 장비업체 ASML의 실적 발표가 있었습니다. 그러나, 어닝 쇼크(실적 부진)으로 인해 -7.09% 하락하며 기술주 전반의 투심을 악화시켰습니다.</p><p id="ce355a00-3305-409f-9709-67af2fb5f72c" class="">현재 주식 시장을 이끌고 있는 것은 AI와 반도체 수요입니다. 만약 반도체 수요가 감소하고, 이것이 기술주들의 실적 부진으로 나타난다면 주식 시장은 랠리를 지속하기가 어렵습니다.</p><p id="49bcd24f-b2c6-4985-a0e9-41602c9254f6" class="">
+</p><blockquote id="a9d39272-5252-4e40-9fc9-38bc390330cd" class=""><strong>[마켓뷰] 환율·금리·유가 일단 진정…&quot;반도체주 불안하네&quot;</strong></blockquote><p id="95989fe8-50ac-4f13-acd8-290fba2e89b4" class="">오늘 새벽 미국장에서는 나스닥, 환율, 장기채 금리, 유가가 동시에 하락했습니다. 급격히 치솟던 환율, 금리, 유가가 하락한 것은 긍정적인 요소이지만 주식 시장의 하락세도 가팔랐기 때문에 시장 분위기가 부정적으로 변하고 있습니다.</p><p id="af2b685b-622b-4301-bb34-26187ac434b6" class="">달러 인덱스, 미국 장기채 금리, 유가의 하락이 일시적인 하락일지 아니면 상승 추세 중의 눌림일지 귀추가 주목됩니다.</p><p id="93124001-68f4-40cc-925a-db7f98447669" class="">
+</p><h3 id="1b68c59b-6f00-423e-a5ee-416e32962246" class=""><strong>2. 암호화폐 뉴스 헤드라인</strong></h3><p id="68fc9a32-0790-459e-976c-396927dce7ba" class="">
+</p><p id="6761b450-2777-409d-850b-fe63a8a4c61f" class="">
+</p><blockquote id="dbbec9af-0177-4b5a-9fda-5de4b859b926" class=""><strong>“비트코인 하락 원인, 중동 갈등 아닌 유동성 위축 때문…연준 정책과 국채 수익률 주시해야”–레커 캐피탈</strong></blockquote><p id="d7d21db5-5241-44ab-99d3-ff4d5099e1de" class="">톰슨 분석가에 따르면, 많은 사람들이 증시와 비트코인의 하락 원인을 중동 갈등에서 찾고 있지만, 그것은 하락의 트리거일 뿐 진짜 원인은 유동성의 위축일 수 있습니다.</p><p id="9f5e9515-42ee-4fae-a857-a8535117aeff" class="">특히  비트코인은 유동성과 금리에 가장 민감하게 반응하는 자산입니다. 최근 장기채 금리의 급격한 상승은 비트코인에 부정적인 영향을 미칠 수밖에 없습니다. 10년 만기 국채 수익률은 3월부터 급등하기 시작하여 화요일에는 5개월 만에 처음으로 4.7%에 도달했습니다.</p><p id="16c924fd-ec8a-4299-b995-14a2541f8c4d" class="">장기채 금리가 오랫동안 높게 유지되면 경제에 하방 압력을 가하며, 이는 작년 봄 미국 실리콘 밸리 은행 파산과 같은 위기를 부를 수 있습니다. 이러한 우려는 기관투자자들이 비트코인과 같은 위험 자산에 투자하는 것을 꺼리게 만듭니다.</p><p id="6f2aa4c0-1ebd-44de-88fb-0d2c42655e30" class="">톰슨 분석가는 앞으로 “정부와 정책 입안자들의 대응을 지켜봐야 한다” 며 “5월 1일로 예정 돼 있는 연준 공개시장위원회를 주목해야 한다”고 주장합니다.</p><p id="c2c083b1-224d-4562-9ab8-1e08d3f7af65" class="">
+</p><blockquote id="1cec07e3-49bd-4159-b65d-028780cd9d6a" class=""><strong>&quot;소문에 사고 뉴스에 판다&quot;...비트코인 반감기 효과 증발, 한때 6만달러 붕괴</strong></blockquote><p id="9b4b5f24-40bd-489e-82d0-bf0864ad9c8c" class="">오늘 새벽 비트코인은 잠시 60K가 붕괴하며 시장에 공포 분위기를 조성했습니다. 반감기 효과는 없고, 이미 선반영됐으므로 오히려 반감기에 팔아야 한다는 의견이 지지를 받고 있습니다.</p><p id="04e41053-77c5-4781-852d-9210b6c7e8b7" class="">
+</p><blockquote id="1c3d986f-3929-4c10-914e-476d251dce68" class=""><strong>“비트코인 반감기, 중기 가격 전망에 영향 크지 않다”–골드만삭스</strong></blockquote><p id="f2bfc25c-f8d7-470b-934e-d9afba328826" class="">골드만삭스는 비트코인 반감기 자체가 이젠 중요한 이벤트가 아니며, 자기실현적 예언 즉 심리적 차원에서 대중들의 수요를 끌어당길 뿐 정말 중요한 것은 비트코인 현물 ETF 수요라고 말합니다.</p><p id="c36e7e78-24c8-4956-b54b-df823a632d78" class="">
+</p><blockquote id="cbc715bd-2d7e-4417-b4ad-9d2d284f092f" class=""><strong>홍콩 비트코인 ETF, 시장 규모 작을 것…中 투자자 참여 불가 전망</strong></blockquote><p id="e4ec53cd-11c0-445c-a8bd-f8445632dfb2" class="">블룸버그 분석가들은 중국 본토의 투자자들이 홍콩 비트코인(BTC) 현물 상장지수펀드(ETF)에 투자할 수 있는 가능성이 낮다고 보고했습니다.</p><p id="84172ed4-46a0-4cf1-a1b4-fd27acdf6f1c" class="">에릭 발추나스 블룸버그 ETF 애널리스트는 &quot;미국과 홍콩 ETF 시장의 규모는 현저히 다르다&quot;며 &quot;규모 차이를 감안할 때 자금 유입액을 합치면 10억달러를 넘지 못할 것&quot;이라고 주장합니다.</p><p id="0a16595d-0c46-44e8-917d-686110a0c992" class="">앞서 비트코인 현물 ETF 수요의 촉매제로 홍콩 비트코인 현물 ETF가 주목을 받고 있습니다. 그러나 중국 본토 투자자들이 들어오지 못 한다면 그 상승 효과는 제한적일 수밖에 없습니다.</p><p id="1c4b7f9b-89f2-44fc-b8e6-95fa77a25147" class="">
+</p><blockquote id="61ce6753-b478-4855-928f-a5fac34b7cd7" class=""><strong>비트코인 홀로 강세인 &#x27;조용한 불장&#x27;...2021년과 어떻게 다른가</strong></blockquote><p id="47470d0b-c057-4d4e-9ffb-0b62cabb778f" class="">현재까지의 상승장은 알트코인 대비 비트코인의 독주가 돋보였습니다. 2021년과 달리 이러한 비트코인의 독주가 지속될 가능성을 배제할 수 없습니다. 그 이유는 다음과 같습니다.</p><p id="f444c2eb-5146-4889-b7ad-9ed1e14207f6" class="">1) 비트코인 현물 ETF로 인해 개인투자자에서 기관투자자로 주요 플레이어가 바뀌었고, 이에 따라 자금이 알트코인이 아닌 비트코인에만 몰리고 있다.</p><p id="0df80ae6-4394-48cd-8110-95d88928aeb6" class="">2) 매크로 상황이 2021년과 다르게 긴축적이므로, 가상자산 시장에 흘러들어갈 유동성이 부족하다.</p><p id="f9091bf4-e7d7-4b00-9c75-1811e000e25b" class="">3) SEC의 디파이(De-fi) 규제 등 알트코인 투자가 제한되고 있다.</p><p id="cd68d14a-47d7-46a2-a13f-f6bff683f565" class="">
+</p><p id="c006e39e-6d59-4953-b478-5810c7f90973" class="">가상자산 업계 관계자는 &quot;비트코인 현물 ETF, 비트코인 반감기, 전쟁, 긴축 기조 등 특수한 상황들이 맞물려 있다&quot;며 &quot;이더리움 가격이 상승해야 산하 알트코인 가격도 상승할 수 있는데, 이더리움이 비트코인 상승세를 따라가지 못했다&quot;고 말합니다.</p><p id="8312e5eb-1462-4c16-8dcf-f0659e78682a" class="">또 그는 &quot;전쟁, 금리인하 불발 등 각종 악재에도 비트코인 가격이 버티는 모습을 보면, 비트코인 자체가 완전한 투자자산으로 변하고 있는 것으로 보인다&quot;고 덧붙였습니다.</p><p id="834bef5d-a8cd-48ca-8768-9a7dab5f750d" class="">
+</p><p id="3398af48-8606-4650-874e-0067ba1bc663" class="">만약 이 추세가 지속된다면, 포트포리오에 비트코인 현물 비중을 늘리는 것을 고려해야겠습니다. 또한 추후 이더리움 현물 ETF가 알트코인 시즌의 촉매제가 될지 모니터링이 필요합니다.</p><p id="38e654da-4d30-4bdb-b037-8fb130c3ab0d" class="">
+</p><blockquote id="3c97ef37-c99a-474f-a4dc-4e8fc34fad36" class=""><strong>[두바이 현장 르포] “솔라나는 건재하다” …해커 하우스 행사, 열기 가득</strong></blockquote><p id="682ca0f4-adf5-48c2-8b43-ecdc150c8d53" class="">알트코인 시장의 약세 속에서도 코인들 간의 전쟁은 조용히 진행되고 있습니다.</p><p id="e25ec3ce-b674-41a4-8da0-3f37976431b5" class="">솔라나 재단이 지난 15일 두바이 콘크리트(CONCRETE)에서 해커 하우스를 개최했습니다. 해커 하우스는 솔라나 생태계 활성화를 위해 솔라나 체인에 빌딩 중인 개발자들과 프로젝트들을 지원하는 행사입니다. 행사의 열기가 가득하다니, 솔라나의 장기적인 성장이 기대됩니다.</p><p id="9ad93cf2-cadb-4d5f-9a2f-b8ba04c616bb" class="">다른 체인들도 솔라나 흥행 요인을 분석하고 벤치마킹 중이다. 아발란체(AVAX), 톤(TON) 등은 재단 차원에서 밈코인을 지원 중이다. 수이(SUI)는 디파이 활성화를 유도하고 있다.</p><p id="5aa8c8c3-1d12-4f3f-8838-292faff4980f" class="">
+</p><p id="526b230c-146e-40dd-b617-d32934a1257b" class="">아발란체, 톤, 수이가 앞으로 L1 전쟁에서 두각을 보일지 기대됩니다.</p><p id="9cb59ed3-737e-49bb-a9c1-d20f562bd7f7" class="">
+</p><h3 id="24d83979-2fb2-4cd8-b13a-56f316194a38" class=""><strong>3. 매크로 발표 일정</strong></h3><p id="5b706e43-688c-4c45-9915-2a54219d72ca" class="">★ 오늘 오후 9시 30분: 미국 신규수당청구건수</p><p id="706b7b2c-cf8e-41f2-8855-5ef76cae5fd3" class="">오늘 오후 9시 30분: 필라델피아 연은 제조업활동지수 (4월)</p><p id="f471e811-83c3-4287-94d9-cad7778cc253" class="">오늘 오후 11시: 기존주택판매 (3월)</p><p id="9784b315-9ae4-4fe4-92b5-ece3f0eaedd5" class="">
+</p><h3 id="dec2d8a7-903c-4849-a071-aeaedce4f879" class=""><strong>4. 코인시장 발표 일정</strong></h3><figure id="7019a8ad-d694-4aea-b30c-da48e7f0860f" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled.png"><img style="width:1425px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled.png"/></a></figure><p id="0cc6a1f9-8cdf-4298-a101-fc1577f723f9" class="">이제 반감기가 2일 앞으로 다가왔습니다. 반감기 날짜에 여러 이슈가 겹쳐있으므로, 변동성에 주의하길 바랍니다.</p><p id="8c318954-354b-413a-8e54-08c56deaad30" class="">
+</p><h2 id="97f0334d-e532-4ab6-987c-0c2b25131b43" class="block-color-blue_background">글로벌 시장 분석</h2><p id="b67c84c7-dcbc-4ad2-9489-e3a54cee1b51" class="">
+</p><h3 id="2067c35d-3d43-4fc0-9d5b-0eac52793ce7" class=""><strong>1. 글로벌 시장 변동률</strong></h3><figure id="a7aa3b04-8841-4a86-bc6b-3583e178917e" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%201.png"><img style="width:687px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%201.png"/></a></figure><figure id="10767fce-c560-478d-b537-a40300a78749" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%202.png"><img style="width:684px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%202.png"/></a></figure><p id="773a2e00-dc31-4b45-af66-8ed1be5d5e6c" class="">어제 미국 시장은 전반적으로 약세였습니다. 특히 나스닥 기술주의 하락세가 두드러졌습니다.</p><p id="b3a1d527-12db-482e-80ac-9f658e0df25f" class="">그러나, 코스피는 장 개시 후 상승으로 시작하고 있는 좋은 모습입니다.</p><p id="068c441f-0011-47f3-b499-78bcb626c63f" class="">
+</p><p id="cd261ca9-22f8-4051-8e44-99d0abcbef6a" class="">
+</p><h3 id="764c5cc7-c50d-4597-9f92-2470295a5f0f" class=""><strong>2. 주요 지수 기술적 분석</strong></h3><figure id="72f05874-a860-4c57-a7b4-d418b5ba1cc4" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%203.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%203.png"/></a></figure><p id="e3ae0319-c87e-4f72-8f08-6a0640e5e5eb" class="">[나스닥]</p><p id="e170f198-7366-405a-aa9e-7e627761b479" class="">나스닥은 소파동이 과매도권에 들어가 하락 힘이 강한 상황입니다. 전저점과 80 이평선의 지지를 하방 돌파했습니다.</p><p id="466a246c-5465-45cf-96d9-8a0b625b15be" class="">20-60 이평선 간 데드크로스로 인한 반등이 나올 수 있으나, 곧바로 데드크로스 저항을 돌파하기는 어려워보입니다.</p><p id="e80f9673-4fb5-4929-b6ef-4a8e25a84277" class="">
+</p><figure id="8a742a96-416a-4a4e-906b-c5cdcb81c864" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%204.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%204.png"/></a></figure><p id="44268b51-417d-4a6e-816f-ee84ddcf3f8d" class="">[중국 항셍 지수]</p><p id="683e2eac-5aaf-4b36-921c-9c036a016a1c" class="">항셍 지수도 마찬가지로 소파동이 과매도권에 들어가며 하방 압력이 매우 강한 상태입니다. 전저점 지지선에 거의 다 와가나, 이평선이 역배열이므로 하락 브레이킹이 걸릴지는 하위 파동을 모니터링해야 합니다.</p><p id="1de783ac-41bb-472e-a8b1-19e3a69e7baa" class="">
+</p><figure id="eff22c79-8fa1-4303-8a46-279d36841d59" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%205.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%205.png"/></a></figure><p id="cb263b81-5777-43d4-8d80-f1a03b76c7f4" class="">[중국 선전 지수]</p><p id="7b38cfb8-f863-451c-bac2-eba310d778be" class="">선전 지수는 항셍 지수보다 상황이 좋습니다. 지지선에서 반등이 나와 소파동이 자잘한 바닥을 만들며 상승 중입니다.</p><p id="62d8933f-fb69-42ae-90bf-6895189402d6" class="">60이평선 위에서 캔들이 잘 버텨주는지 확인해야 합니다.</p><p id="23ee7800-9f65-4ca8-80c3-e2dd342e47dc" class="">
+</p><figure id="eb11ed66-7804-4269-80b1-a3bdf963bbb5" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%206.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%206.png"/></a></figure><p id="361a8805-f14e-4a85-9c32-ce406c866dad" class="">[코스피]</p><p id="5db10b01-b0f8-41cf-aa99-5642c8ab4d35" class="">코스피는 박스권 상단 근처에서 지지를 보이고 있습니다. 아직 60이평선의 기울기가 살아있으므로 하락을 하더라도 시간이 걸릴 것으로 보입니다.</p><p id="5077564b-5c74-4477-90c4-f1213302a1f3" class="">
+</p><figure id="da181764-e7a0-4b59-8268-6db02792d6b2" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%207.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%207.png"/></a></figure><p id="c9a23098-b82e-4d58-9b5f-f40e0a47fc82" class="">[코스닥]</p><p id="f2779367-e4a6-4c8b-b6d3-504fd70c7bac" class="">코스닥은 전반적으로 이평선에 혼조세입니다. 삼각 수렴 지지 근처에서 반등을 보여주고 있으나, 위로 20이평선이 가파르게 하락 중이므로 상승하더라도 재자 눌림을 보여줄 가능성이 높습니다.</p><p id="04969a39-1197-4a2e-a592-9c951262fa42" class="">
+</p><figure id="de60efc7-1d04-446c-b5cd-5e5444ca5961" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%208.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%208.png"/></a></figure><p id="f02c4101-eb79-4e2c-a32f-da0e9fbbcbf1" class="">[미국 10년물 금리]</p><p id="10ca1f98-be9f-4e86-ae65-05de756fc6fd" class="">미국 10년물 금리는 여전히 대파동이 과매수권에 꽂혀 매우 가파른 상승세를 유지하고 있습니다. 다행히 어제 밤 국채 금리가 하락하며 코스피에도 긍정적인 영향을 끼친 것으로 보입니다.</p><p id="bf25e195-bd72-4851-8a77-8784e8c2eda4" class="">그러나, 이러한 하락은 소파동 하락을 통한 5-10이평선 이격 메꾸기로 보아야 합니다. 중장기적으로 국채 금리의 상승은 지속될 가능성이 높습니다.</p><p id="242e885a-6e1a-49b4-89a1-b35e1ac1d700" class="">
+</p><figure id="f4b3028c-9d01-456d-9517-32c4ae190352" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%209.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%209.png"/></a></figure><p id="e9ffa7b0-c4f5-43fa-890b-aa69afec515c" class="">[달러 인덱스]</p><p id="72ef97fb-a783-409a-81ad-c4baccab66b3" class="">달러 인덱스도 매물대 저항에서 5이평선과 이격을 메꾸머 잠시 쉬어가는 모습을 보이고 있습니다. 그러나 중파동과 소파동이 과매수권으로 당장 하락할 힘은 보이지 않습니다. 매물대 저항에서 어떤 힘을 축적하는지 확인이 필요합니다.</p><p id="59a157c9-e0d9-46d1-aaa9-578048be01cc" class="">
+</p><figure id="515ad0dc-b4c0-455d-8ac7-a8b0972f734d" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2010.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2010.png"/></a></figure><p id="493b5d85-c2d8-4063-9f82-2e3b134b15c4" class="">[위안화]</p><p id="fb7a800d-f87a-418a-97e5-d0b43bc8265f" class="">위안화는 모든 파동이 과매수권에 깊숙히 꽂혀 랠리를 지속하고 있습니다. </p><p id="84b44632-a382-4b4d-9fda-1935b181f6c0" class="">
+</p><figure id="67469dcb-2165-4c56-967c-b20a809bdc94" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2011.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2011.png"/></a></figure><p id="8e060deb-27ed-49b4-ba5f-0a8de5b8381e" class="">[골드]</p><p id="62fec930-b402-40c7-9071-1525aac116cf" class="">골드도 대파동이 과매수권에 꽂혀있으므로 상승 추세를 지속하겠지만, 단기적으로 10이평선과 이격을 좁히는 움직임에 들어갔습니다.</p><p id="04006904-318f-4ab6-ba29-78373bd193a3" class="">
+</p><figure id="4206bb87-3403-40ea-bb50-f47fbbac9d06" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2012.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2012.png"/></a></figure><p id="6066a6f3-6bd1-4a82-a4c1-6cdb3fef0fe7" class="">[실버]</p><p id="ae964d4e-2040-4fd6-8c1b-3ad6dddd60fd" class="">골드와 실버 모두 가파른 상승세로 20이평선과 60이평선 간 이격이 커지고 있는 상황입니다. 중, 소파동의 눌림 이후 횡보를 하며 하락 힘을 축적하는지 확인이 필요합니다.</p><p id="e4df41d8-249c-4c44-a463-c418d6547359" class="">
+</p><figure id="3e0e6476-76ec-4f74-beca-dd8a8aa516f6" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2013.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2013.png"/></a></figure><p id="788f8e46-1619-467d-9e5d-488e7c7fdaf3" class="">[엔비디아]</p><p id="d6d7d1ea-1718-4d82-8416-faf83b4f8370" class="">어제 나스닥의 하락으로 인해 엔비디아 하락폭이 꽤 컸습니다. 그러나, 앞전에 상승한 것에 비하면 큰 하락이라고 볼 수는 없습니다. 채널 상단 지지선, 60이평선 지지선, 최고점 지지선이 겹치는 지점을 앞두고 있습니다.</p><p id="8c5fb2e8-c339-4330-a313-fe9d36e43a52" class="">해당 지점에서는 단기적으로나마 반등이 가능합니다.</p><p id="55a97bf7-b4f0-4091-b1ac-ff83031d5bf6" class="">
+</p><h3 id="18f56466-64eb-45d9-9c69-b6baa96f6455" class=""><strong>3. 요약</strong></h3><p id="918018cc-e9f0-46c2-96fd-33210fded421" class="">예고했던 주식 시장의 하락이 진행 중입니다. 반등이 나올 자리에 위치하고는 있으나, 추가 하락을 염두에 두어야 하는 상황입니다.</p><p id="19ff48e3-d62d-40b1-b7e9-2982a1a9735d" class="">현재 하락 에너지를 해소하기 위해서는 하위 파동에서 어떤 에너지가 축적돼야 하는지 판단해보시길 바랍니다.</p><p id="2d98160f-060e-4377-ad19-0db0c992b029" class="">
+</p><p id="22577446-5e17-4ead-9487-7d91c7679587" class="">
+</p><h2 id="8cfb93e2-2710-4c78-833b-d7eb8aed8c11" class="block-color-blue_background">비트코인 시장 분석</h2><p id="e0e716ab-54d5-4128-ba4b-2e519aa6c467" class="">
+</p><h3 id="38ef0f76-07be-4979-9b5f-25e541862140" class=""><strong>1. 주요 암호화폐 변동률</strong></h3><figure id="5bae9d2a-1167-4b1f-a1eb-565d4c5bb249" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2014.png"><img style="width:1294px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2014.png"/></a></figure><p id="6f8db3d9-4b97-48b7-a20b-89ecb7a9d0a7" class="">
+</p><h3 id="3d25dd61-7e12-4ea2-973f-7309c86d02c1" class=""><strong>2. 비트코인 기술적 분석</strong></h3><figure id="621a492f-03b7-4f27-9703-ee2a3442d5c2" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2015.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2015.png"/></a></figure><p id="77b7f290-00de-4ee5-8657-6abd0960a38f" class=""><strong>[비트코인 2시간봉]</strong></p><p id="7782e8c1-46f6-499a-b2ee-24c34bf96eac" class="">어제 시장은 60K를 잠시 이탈하며 공포 분위기를 조성했습니다. 그러나, 2시간봉에서는 대파동 쌍바닥의 가능서을 보이며 반등 힘을 축적하고 있습니다. 이 힘으로 60이평선, 즉 64~65K 구간까지 상승이 가능해보입니다. MACD 상에서도 저점을 높여주고 있습니다.</p><p id="a40c91a9-cd5e-41ac-b65f-a619e0a16127" class="">그러나, 이평선이 역배열이므로 급반등을 기대하기는 어렵습니다. 반등 이후 재차 눌리며 기간 조정에 빠질 가능성이 높습니다. 단기 매매를 하시는 분들은 저항대에 파는 전략이 유효해보입니다.</p><p id="7a2ecb4b-0117-45d5-b5ff-bf68e1cf9924" class="">
+</p><h3 id="6590a7a6-cac8-4292-b733-8a69ef9e9807" class=""><strong>3. 비트코인 시장 데이터</strong></h3><figure id="50d84fcf-ee12-4701-88ce-388cc6fd845b" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2016.png"><img style="width:1280px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2016.png"/></a></figure><p id="16c2ce2e-5425-4a69-a4ed-3750c04524b1" class="">[CVD + Fire 차트]</p><p id="8b85ea07-8218-46ce-85cc-a83d3454dc8c" class="">전반적으로 고래들의 매도세가 강합니다. 하단 매수벽이 체결되고 있는 상황입니다. 그러나 매수벽들이 점차 강해지고 있습니다.</p><p id="4bc5ae5e-bd02-4596-a902-b0bd6fd02752" class="">
+</p><figure id="1007bf53-d804-4a91-ae34-e9da11acd3b7" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2017.png"><img style="width:960px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2017.png"/></a></figure><figure id="eb2fc4a4-67a3-4c2e-95f0-93c0ce2a5e53" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2018.png"><img style="width:960px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2018.png"/></a></figure><p id="582892fc-fc81-43ac-9cfd-cc997c10bc87" class="">[청산맵]</p><p id="3cc2ac45-4b90-4359-bd57-3f61e501e8fb" class="">전체적으로 숏 물량이 매우 많은 상황입니다.</p><p id="d3b267c9-34cc-485a-98b3-0597bdd61fa3" class="">
+</p><h3 id="6f8195c5-75ee-4f0b-92b5-65cf67621985" class=""><strong>4. 비트코인 공포탐욕 지수</strong></h3><figure id="69c30707-efea-4d4a-93e1-0d3280ff8133" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2019.png"><img style="width:1212px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2019.png"/></a></figure><p id="c3efa965-5c10-4acf-bedf-075b3560be5f" class="">
+</p><p id="384b2731-2041-4836-8cc1-5514ef5c6246" class="">드디어 시장이 공포 구간으로 진입했습니다. 공포는 다른 누군가에게는 기회입니다. 그러나, 공포가 더 큰 공포로 이어진다면 오히려 연쇄적인 하락을 일으킬 수 있습니다.</p><p id="1871386f-2554-4541-b1a1-55a3a6f868d7" class="">공포가 어디에서 끝날지는 여러 데이터를 종합하여 판단해야 합니다.</p><p id="b2147cc9-6be8-42c4-bf04-6835005c0f3c" class="">
+</p><h3 id="00add7ea-70ad-4a88-b928-b6a3b06dcae9" class=""><strong>5. 요약</strong></h3><p id="18a934bb-d07b-449c-b79a-d53307451366" class="">비트코인은 단기적으로는 반등이 가능하나, 상승하더라도 추가 하락을 염두에 두어야 하는 상황입니다.</p><p id="a2cc5611-7775-41c2-9cb2-196cc1e02f65" class="">
+</p><h2 id="3de7d128-028a-4f84-a730-6c6ef10ef20e" class="block-color-blue_background">알트코인 섹터/종목 분석</h2><p id="5a1afa08-5e7c-4796-9830-62564ace22f2" class="">
+</p><h3 id="4acba211-7f62-4ac2-b986-92a780c2805a" class=""><strong>1. 섹터별 24시간 변동률 순위</strong></h3><figure id="5f82d2fb-1617-4ac4-8ddd-63f33bfd5f81" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2020.png"><img style="width:1359px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2020.png"/></a></figure><p id="717077c0-0c23-43fc-9fdc-df1855339f54" class="">[코인 게코]</p><p id="d22ae89c-c77f-4e49-a277-13cedbdcf0bd" class="">어제 TIA가 강세를 보였고, 이번 하락에 L1이 상대적으로 좋은 모습을 보여주고 있습니다.</p><p id="c09adc1b-6f2f-463d-90fe-dbe60b0d940a" class="">
+</p><h3 id="c39f4167-a233-4c2b-a0e2-0766704f1986" class=""><strong>2. 종목별 24시간 변동률 순위</strong></h3><figure id="e42c9ef3-35a1-4786-83c6-97c21da24a87" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2021.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2021.png"/></a></figure><p id="cc81812e-8ced-4bb2-ba35-4defb6d7bc30" class="">[코인 게코]</p><p id="4a1e8dd7-a534-4e91-8712-773df7dc4932" class="">
+</p><figure id="9f3db3ae-7039-45ee-8eaa-fa18db7b7f55" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2022.png"><img style="width:370px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2022.png"/></a></figure><p id="d8f3aee1-2d1c-46c5-85b6-be712e3580dd" class="">[시그널]</p><p id="eaab6cff-a89f-494e-b825-fd1a4006cfd0" class="">시그널 상에서도 L1 종목들의 성적이 좋은 편입니다. 특히 INJ의 강세가 두드러집니다. 앞전 TIA의 좋은 모습을 토대로 INJ를 공략하는 전략이 유효했습니다.</p><p id="b8fe00cf-97fb-4fa1-8641-ada6f57e6d8e" class="">
+</p><h3 id="01ee7ee6-05c6-4c29-9222-2f78ee4779d1" class=""><strong>3. 비트코인 도미넌스</strong></h3><figure id="3fdb427d-9d96-4b58-aafc-243628fc603d" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2023.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2023.png"/></a></figure><p id="526ee2c1-d64c-4c36-9f1e-2903cbb5b359" class="">[비트코인 도미넌스]</p><p id="d252f95f-a4f8-454e-be4a-c14c7a99e149" class="">비트코인 도미넌스는 비트코인의 하락에도 전저점을 이탈하며 하락해주었습니다. 때문에 일부 알트코인들이 좋은 모습을 보여주었으나, 현재는 120이평선 지지와 앞전 박스권 상단 지지를 받고 상승하는 중입니다.</p><p id="3364357b-eb19-4962-96ae-894359dd5c72" class="">비트코인 도미넌스가 앞전 박스권으로 회귀하느냐, 여기서 다시 상승 추세로 돌아나가느냐에 따라 알트코인의 상황이 많이 변할 듯합니다.</p><p id="04bc5b92-bb62-4a09-9fe3-8544fd2b17a8" class="">
+</p><h3 id="7fb86b66-9aa3-49d0-9451-d6e424581158" class=""><strong>4. 요약</strong></h3><p id="e82c9d65-272b-4a89-851f-1e5d31b50ccb" class="">어제 비트코인의 하락에도 비트코인 도미넌스가 빠지며 일부 종목의 공략이 가능했습니다. 특히, 어제 데일리 리포트에서 말씀드린 TIA가 속한 L1 종목의 강세가 두드러졌습니다.</p><p id="12d8dd06-703d-4902-aeca-98b6ce6a7e06" class="">그러나, 다시 비트코인 도미넌스가 상승으로 전환됐으므로 주의가 필요합니다.</p><p id="8f3621de-4fa8-413f-831c-293b7a022890" class="">
+</p><h2 id="55ce2e76-e05b-4f78-966c-42b96de91221" class="block-color-blue_background">온체인 특이사항</h2><p id="1fc757f8-244f-4d33-aaac-c385eb7435ba" class="">
+</p><h3 id="87ef94f4-08b5-4973-9c77-eee6a843c6e3" class=""><strong>고래 지갑</strong></h3><figure id="5dab3507-be44-4cea-aaf7-59af8a5e9f70" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2024.png"><img style="width:647px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2024.png"/></a></figure><p id="e28f0fa3-5dbd-4e67-baf2-831e1681f80e" class="">
+</p><p id="6e1a94c5-d0ee-4dd4-b7ad-37dd7d7ff833" class="">
+</p><p id="749857c5-215b-4fd0-a763-83830295e7fb" class="">
+</p><h3 id="392e9f9a-fcc8-4e5c-833b-7e64d48ec50e" class=""><strong>2. BTC 현물 ETF Flows</strong></h3><figure id="b2f24f96-8906-4dbb-8396-113b21c6faf7" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2025.png"><img style="width:650px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2025.png"/></a></figure><p id="afd47fc5-741e-483a-abee-91ed0f4b8d25" class="">비트코인 현물 ETF는 4거래일 연속 순유출을 기록 중입니다. 어제 유출량은 이전보다 큰 수준입니다. 현물 매수세가 부족합니다.</p><p id="461c9623-ca32-431c-ae9e-ba71c6718e6a" class="">
+</p><p id="67af30f4-0349-4476-a188-f759f8b0925b" class="">
+</p><h3 id="88010e53-58fd-40fc-acf1-813d8827f6e1" class=""><strong>3. 바이낸스 현물-선물 베이시스</strong></h3><p id="cb27f027-eb93-4cb8-8b25-1bc28932786a" class="">
+</p><figure id="14717d6e-184f-452e-b212-d5310a156e07" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2026.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2026.png"/></a></figure><p id="dcdf2a48-c0dd-43ea-91f5-7b847b52bc80" class="">시장은 여전히 백워데이션 상태입니다.</p><p id="5e8d3db1-bc91-433e-8913-a27f2f3f90ed" class="">
+</p><p id="cf9d0b4a-115a-405c-9c7f-4ecf3a36dd33" class="">
+</p><h3 id="3557b01a-180b-43bf-8aef-a0d025be77c7" class=""><strong>4. Deribit Option 미결제 약정</strong></h3><figure id="0b3c40cf-c577-4d1e-83e2-5eb24401a027" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2027.png"><img style="width:1889px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2027.png"/></a></figure><p id="c7ca595c-3cb1-4480-8f38-38733b3c9d66" class="">아직 기관들은 콜옵션 상으로는 상승에 베팅하고 있습니다. 그러나, 55K, 60K에 풋옵션 물량이 모여있는 것을 확인할 수 있습니다.</p><p id="18a57985-6331-499c-b801-91199e5c4d39" class="">해당 구간까지 하락할지 모니터링이 필요합니다.</p><p id="f4b1fca2-c271-4af8-9455-0620a8af4313" class="">
+</p><p id="ca330a1f-1ddb-4cd6-8a36-d9c2c8b68a71" class="">
+</p><h2 id="fd41f067-1eac-49d0-b17e-eb9cebc2023a" class="block-color-blue_background">De-fi 특이사항</h2><p id="5ae485cc-77f4-4fea-a94f-03a7c32fa550" class="">
+</p><h3 id="bf52fe46-3773-4ca0-b504-c26d8163ec03" class=""><strong>1. 스테이블 코인 추이</strong></h3><figure id="95f06647-39d1-4a32-a86d-f6a34d8886c5" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2028.png"><img style="width:1612px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2028.png"/></a></figure><p id="e93fa269-c3c4-480a-a460-4c8eb4717d81" class="">
+</p><h3 id="a1fe8f69-2934-44b7-b2ac-37a98e3e3d80" class=""><strong>2. TVL 추이</strong></h3><figure id="7545be8f-49b6-4c0b-bb8e-a7e55e3e564f" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2029.png"><img style="width:1633px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2029.png"/></a></figure><figure id="fe4744ef-1872-4ccc-8f82-3396d4ebef3b" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2030.png"><img style="width:708px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2030.png"/></a></figure><p id="794d56f5-2958-4165-803f-f69b4e486085" class="">
+</p><h3 id="d733e928-2bac-4c72-81de-8e92d1461e4b" class=""><strong>3. 요약</strong></h3><p id="91794f37-21cc-44b7-af81-d73b4afa7da2" class="">스테이블 코인은 계속 우상향 중입니다. 그러나 디파이들의 TVL 하락은 여전히 강합니다. 디파이 디레버리징이 지속하고 있는 것으로 보입니다.</p><p id="8b22a040-d4bb-4820-9412-22ab7e2aea87" class="">기타 Pendle과 ENA는 상대적으로 잘 방어하고 있는 중입니다.</p><p id="6576dc4a-936b-4bc7-862b-e4a7a278b48b" class="">
+</p><h2 id="15bb95ad-ca2d-42b6-8642-7f16b1d1e319" class="block-color-blue_background">오늘의 매매전략 포인트 </h2><p id="f8015b96-8114-4984-8d33-d4658edea80d" class="">
+</p><ul id="18d49ed5-0882-460d-95e9-32ebc4b91aee" class="bulleted-list"><li style="list-style-type:disc"><strong>큰 그림</strong></li></ul><figure id="c39698d7-50b2-43cf-bd3d-8789e1567d55" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2031.png"><img style="width:632px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2031.png"/></a></figure><p id="a16f6898-710e-4320-9209-ab90c7ac4689" class="">
+</p><p id="df08bcfd-9c8a-44a4-bcd9-7cd689d272a9" class="">전체 4구간으로 매매에대한 큰그림을 설명드렸습니다.</p><p id="64161f5d-2847-45f0-afcb-f0331e5125f6" class="">
+</p><p id="2a288850-4ffa-418a-b719-9e9bdd374089" class="">현재는 3번째 장기투자 매수의 유리한 구간에 위치하였고 , 지속되는 하락세에 시장분위기는 좋지 않지만 차트적인 관점으로만 본다면 투자하기 좋은 구간에 위치해있습니다.</p><p id="0539ccaa-723a-4215-8a25-5c685f62c0b6" class="">
+</p><p id="da27c145-b568-49e3-bb2d-1ba8c941b476" class="">물론 비트코인의 움직임이 4번째 52K~58K 구간까지 도달한다면 추가하락이 있을 수 있지만 반대로는 추가하락이 나오지 않는다면 기회를 놓치게 될 수도 있습니다.<br/>이런 부분을 종합하여 본다면 어느정도 손실폭을 미리 생각해두고 이제는 매수와 홀딩이 진행되는 것이 유리하다고 말씀드리고 싶습니다.<br/><br/></p><p id="5748116f-5859-492e-8973-b264d6d3699e" class="">종목은 타점교육-알트코인 채널의 04/06 테마별 종목 분석 참고하시여 앞으로의 전략을 준비해보시길 바랍니다.</p><p id="fb892ae8-3dbf-4eed-85d9-db1f96665707" class="">
+</p><p id="1ba2915b-ba0e-4f0d-b785-c45d5a55b840" class="">
+</p><ul id="ce90bb79-9285-4089-8e67-cb5469945876" class="bulleted-list"><li style="list-style-type:disc"><strong>데이트레이딩</strong></li></ul><figure id="a49593e6-536b-4c34-a3df-9fa31df7b935" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2032.png"><img style="width:2251px" src="%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%82%E1%85%B2%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%20bd719217b8f0478695f0fc8370121791/Untitled%2032.png"/></a></figure><p id="fae4fe47-22e8-4fe2-8f19-ae89ceedd4c2" class="">
+</p><p id="5a653806-f315-4170-8386-5095a0f54e1b" class="">어제의 반등에서 앞전의 66K 저항대를 터치하지 못하고 고점을 낮추며 전형적인 하락추세를 보이는 모습입니다. <br/>이런 경우 떨어지는 칼날을 정확하게 잡으시려 하지 마시고 , 60K부근을 지지 기준으로 잡고 분할로 매수하며 60K 지지가 확인되면 나올 반등을 공략하시면 됩니다. <br/>정확하게 60K 라인을 깻다 라는 판단은 시간의 개념(봉마감)이 들어가야 하기 때문에 60K 라인에서의 꼬리까지 생각하시여 너프하게 대응하시면 됩니다.<br/><br/>알트코인의 공략 또한 비트코인의 움직임에 기준을 잡고 시그널을 통하여 변동률 리스트 중 잘버티는 종목 위주로 공략하시면 유리합니다.<br/></p><p id="8a9ea12f-ea2b-4a19-b605-ba5180e1c505" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
